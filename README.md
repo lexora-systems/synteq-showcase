@@ -39,8 +39,7 @@ The production architecture is designed around Google Cloud managed services:
 
 ## Demo
 
-- Demo link: `https://demo-url-placeholder.example`
-- Video link: `https://video-link-placeholder.example`
+- Video link: `https://youtu.be/ncGceCxQi2c`
 - Architecture diagram: [assets/synteq-architecture.svg](assets/synteq-architecture.svg)
 
 ## Tech Stack
