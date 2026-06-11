@@ -22,7 +22,7 @@ Synteq is structured as an operational intelligence system for workflow automati
 6. Secret Manager stores runtime credentials and provider secrets.
 7. Vertex AI provides Gemini models for incident summaries and next-step recommendations.
 
-See [../assets/synteq-architecture.svg](../assets/synteq-architecture.svg) for a visual diagram.
+See [../assets/synteq-architecture.png](../assets/synteq-architecture.png) for a visual diagram.
 
 ## Multi-Tenant Boundary
 

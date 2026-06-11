@@ -3,7 +3,7 @@
 ## Suggested Review Path
 
 1. Read the product overview in [../README.md](../README.md).
-2. Review the architecture diagram in [../assets/synteq-architecture.svg](../assets/synteq-architecture.svg).
+2. Review the architecture diagram in [../assets/synteq-architecture.png](../assets/synteq-architecture.png).
 3. Open [data-flow.md](data-flow.md) to understand how events become incidents.
 4. Inspect the synthetic examples in [../examples](../examples).
 5. Inspect the limited code samples in [../src-samples](../src-samples).
