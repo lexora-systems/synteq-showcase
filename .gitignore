@@ -1,0 +1,37 @@
+.env
+.env.*
+*.local
+
+# Local secrets and credentials
+secrets/
+credentials/
+*credentials*.json
+*.credentials.json
+*-credentials.json
+*.service-account.json
+*-sa-key.json
+service-account.json
+gcloud/
+*.pem
+*.key
+*.p12
+
+# Logs and temporary workspaces
+*.log
+.codex_tmp/
+.docker-temp/
+.worktrees/
+
+# Dependencies and build outputs
+node_modules/
+dist/
+build/
+.next/
+coverage/
+tmp/
+temp/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp

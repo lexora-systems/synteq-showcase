@@ -1,0 +1,34 @@
+{
+  "incident_id": "inc_demo_001",
+  "tenant_id": "tenant_demo",
+  "status": "open",
+  "severity": "high",
+  "title": "Customer onboarding workflow failures increased",
+  "workflow": {
+    "id": "wf_customer_onboarding",
+    "name": "Customer Onboarding"
+  },
+  "signals": {
+    "failure_count": 8,
+    "affected_window_minutes": 15,
+    "success_rate": 0.72,
+    "baseline_success_rate": 0.98,
+    "latency_p95_ms": 41000
+  },
+  "grouping": {
+    "source_type": "n8n",
+    "error_category": "external_dependency",
+    "fingerprint": "demo-fingerprint-external-dependency"
+  },
+  "ai_summary": {
+    "model": "gemini",
+    "summary": "Recent onboarding executions are failing during an external CRM update step.",
+    "recommended_next_steps": [
+      "Check the CRM provider status page.",
+      "Retry failed executions after dependency recovery.",
+      "Temporarily pause non-critical onboarding automations if failures continue."
+    ]
+  },
+  "created_at": "2026-06-01T10:03:00.000Z",
+  "updated_at": "2026-06-01T10:08:00.000Z"
+}

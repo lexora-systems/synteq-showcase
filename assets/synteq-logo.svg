@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="240" viewBox="0 0 640 240" role="img" aria-labelledby="title desc">
+  <title id="title">Synteq showcase logo</title>
+  <desc id="desc">A simple sanitized Synteq wordmark for showcase use.</desc>
+  <rect width="640" height="240" rx="36" fill="#172033"/>
+  <circle cx="105" cy="120" r="48" fill="#4c7df0"/>
+  <path d="M82 122 L104 144 L138 94" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="185" y="137" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="800" fill="#ffffff">Synteq</text>
+  <text x="190" y="172" font-family="Inter, Arial, sans-serif" font-size="18" fill="#c9d3e8">Operational intelligence for workflow automation</text>
+</svg>

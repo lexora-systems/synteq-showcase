@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Synteq dashboard overview mockup</title>
+  <desc id="desc">A sanitized product screenshot mockup showing workflow reliability and incidents.</desc>
+  <rect width="1440" height="900" fill="#eef2f7"/>
+  <rect x="40" y="40" width="1360" height="820" rx="18" fill="#ffffff" stroke="#d8deea"/>
+  <rect x="40" y="40" width="1360" height="76" rx="18" fill="#172033"/>
+  <text x="76" y="88" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff">Synteq</text>
+  <text x="1220" y="88" font-family="Inter, Arial, sans-serif" font-size="15" fill="#c9d3e8">Demo workspace</text>
+
+  <text x="76" y="170" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#172033">Workflow Reliability</text>
+  <text x="76" y="202" font-family="Inter, Arial, sans-serif" font-size="18" fill="#68738a">Sanitized dashboard mockup with synthetic data</text>
+
+  <rect x="76" y="245" width="280" height="150" rx="12" fill="#f8fafc" stroke="#d8deea"/>
+  <text x="104" y="292" font-family="Inter, Arial, sans-serif" font-size="16" fill="#68738a">Success rate</text>
+  <text x="104" y="350" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="700" fill="#1f8a5b">96.4%</text>
+
+  <rect x="396" y="245" width="280" height="150" rx="12" fill="#f8fafc" stroke="#d8deea"/>
+  <text x="424" y="292" font-family="Inter, Arial, sans-serif" font-size="16" fill="#68738a">Open incidents</text>
+  <text x="424" y="350" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="700" fill="#c2410c">3</text>
+
+  <rect x="716" y="245" width="280" height="150" rx="12" fill="#f8fafc" stroke="#d8deea"/>
+  <text x="744" y="292" font-family="Inter, Arial, sans-serif" font-size="16" fill="#68738a">P95 latency</text>
+  <text x="744" y="350" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="700" fill="#172033">18s</text>
+
+  <rect x="1036" y="245" width="280" height="150" rx="12" fill="#f8fafc" stroke="#d8deea"/>
+  <text x="1064" y="292" font-family="Inter, Arial, sans-serif" font-size="16" fill="#68738a">Freshness</text>
+  <text x="1064" y="350" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="700" fill="#172033">35s</text>
+
+  <rect x="76" y="455" width="780" height="325" rx="12" fill="#f8fafc" stroke="#d8deea"/>
+  <text x="104" y="503" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#172033">Reliability trend</text>
+  <polyline points="120,700 220,660 320,680 420,610 520,625 620,540 740,575 820,500" fill="none" stroke="#4c7df0" stroke-width="6"/>
+  <line x1="120" y1="720" x2="820" y2="720" stroke="#d8deea"/>
+  <line x1="120" y1="520" x2="120" y2="720" stroke="#d8deea"/>
+
+  <rect x="900" y="455" width="416" height="325" rx="12" fill="#f8fafc" stroke="#d8deea"/>
+  <text x="928" y="503" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#172033">Incidents</text>
+  <rect x="928" y="535" width="360" height="62" rx="8" fill="#fff7ed" stroke="#fed7aa"/>
+  <text x="950" y="573" font-family="Inter, Arial, sans-serif" font-size="16" fill="#9a3412">Onboarding failures increased</text>
+  <rect x="928" y="620" width="360" height="62" rx="8" fill="#fefce8" stroke="#fde68a"/>
+  <text x="950" y="658" font-family="Inter, Arial, sans-serif" font-size="16" fill="#854d0e">Billing sync latency drift</text>
+  <rect x="928" y="705" width="360" height="62" rx="8" fill="#f8fafc" stroke="#d8deea"/>
+  <text x="950" y="743" font-family="Inter, Arial, sans-serif" font-size="16" fill="#475569">Daily report recovered</text>
+</svg>

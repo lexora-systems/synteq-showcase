@@ -1,0 +1,18 @@
+{
+  "source": "demo-webhook",
+  "event_type": "workflow.execution.completed",
+  "workflow_id": "wf_customer_onboarding",
+  "execution_id": "exec_demo_2026_001",
+  "status": "failed",
+  "started_at": "2026-06-01T10:00:00.000Z",
+  "finished_at": "2026-06-01T10:00:42.000Z",
+  "error": {
+    "step": "crm_update",
+    "category": "external_dependency",
+    "message": "Retryable upstream response"
+  },
+  "safe_context": {
+    "customer_reference": "redacted-demo-reference",
+    "payload_redacted": true
+  }
+}

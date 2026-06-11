@@ -1,0 +1,28 @@
+{
+  "tenant_id": "tenant_demo",
+  "workflow_id": "wf_customer_onboarding",
+  "window": {
+    "start_at": "2026-06-01T09:45:00.000Z",
+    "end_at": "2026-06-01T10:00:00.000Z",
+    "duration_minutes": 15
+  },
+  "executions": {
+    "total": 25,
+    "succeeded": 18,
+    "failed": 7,
+    "timed_out": 0
+  },
+  "reliability": {
+    "success_rate": 0.72,
+    "failure_rate": 0.28,
+    "freshness_seconds": 35,
+    "latency_p50_ms": 12000,
+    "latency_p95_ms": 41000,
+    "score": 68
+  },
+  "trend": {
+    "baseline_success_rate": 0.98,
+    "failure_rate_delta": 0.24,
+    "classification": "degraded"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "event_id": "evt_demo_001",
+  "tenant_id": "tenant_demo",
+  "source": {
+    "id": "src_demo_n8n",
+    "type": "n8n",
+    "name": "Demo Workflow Source"
+  },
+  "workflow": {
+    "id": "wf_customer_onboarding",
+    "name": "Customer Onboarding",
+    "environment": "demo"
+  },
+  "execution": {
+    "id": "exec_demo_2026_001",
+    "status": "failed",
+    "started_at": "2026-06-01T10:00:00.000Z",
+    "finished_at": "2026-06-01T10:00:42.000Z",
+    "duration_ms": 42000
+  },
+  "error": {
+    "category": "external_dependency",
+    "message": "CRM update step returned a retryable error"
+  },
+  "metadata": {
+    "region": "demo",
+    "redacted": true
+  },
+  "received_at": "2026-06-01T10:00:45.000Z"
+}
