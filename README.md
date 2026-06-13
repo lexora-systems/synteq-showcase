@@ -1,70 +1,105 @@
 # Synteq Showcase
 
-Synteq is an operational intelligence layer for workflow automation teams. It watches business-critical automations, normalizes events from tools such as n8n, GitHub Actions, GoHighLevel, and webhooks, then turns failures, latency drift, and reliability patterns into incidents and action-oriented operational insight.
+Synteq is an early-stage workflow reliability intelligence platform. It gives teams operational awareness for workflow execution signals without trying to replace logs, traces, APM, or general-purpose observability tools.
 
-This repository is a sanitized public showcase for Devpost and Google for Startups review. It demonstrates the product architecture, technical approach, data flow, and selected implementation patterns without exposing production code, secrets, customer data, deployment credentials, or sensitive business logic.
+This repository is a sanitized public showcase. It contains architecture notes, synthetic examples, selected implementation patterns, and product visuals. It does not contain production code, credentials, customer data, private runbooks, production URLs, or infrastructure identifiers.
 
-## Problem
+## What Problem Does Synteq Solve?
 
-Modern teams run revenue, onboarding, support, and fulfillment through automation platforms. When those workflows fail silently, teams often discover the issue from a customer complaint, a broken handoff, or a missed SLA. Logs exist, but they are fragmented across vendors and rarely explain operational impact.
+Revenue, onboarding, support, and fulfillment processes increasingly depend on workflow automation. When those workflows fail, time out, retry unexpectedly, or stop sending signals, teams often reconstruct the problem from disconnected vendor logs.
 
-Synteq helps teams answer:
+Synteq helps operators answer:
 
-- Which workflows are unhealthy right now?
-- Which failures need attention first?
-- Is this a one-off error or a reliability trend?
-- What should an operator do next?
+- Which workflow sources are sending signals?
+- Are those signals fresh, stale, or not yet available?
+- Which workflows are failing or slowing down?
+- Is a failure isolated or part of an incident pattern?
+- What operational context should the team inspect next?
 
-## Key Features
+## How It Works
 
-- Event ingestion for workflow executions, heartbeats, scheduler runs, and webhook callbacks.
-- Normalized operational event model across workflow vendors.
-- Reliability windows for success rate, failure rate, latency, freshness, and cost signals.
-- Incident grouping for repeated or related workflow failures.
-- Control-plane setup for workflow sources, ingestion keys, alert channels, and team roles.
-- Gemini-assisted operational insight generation for incident summaries and next steps.
-- Google Cloud deployment pattern using managed services for ingestion, compute, storage, analytics, and secrets.
+```text
+Choose source
+-> Configure webhook or API key
+-> Send first event
+-> Synteq validates and normalizes the signal
+-> Source freshness and reliability windows update
+-> Related failures gain incident and timeline context
+-> Teams gain operational awareness
+```
 
-## Google Cloud + Gemini Usage
+Synteq accepts workflow execution signals, associates them with a tenant-owned source, normalizes provider-specific payloads, and updates tenant-scoped operational views. Real signal history is tracked separately from test, simulation, and demo activity.
 
-The production architecture is designed around Google Cloud managed services:
+## Current Capabilities
 
-- Cloud Run hosts stateless API and web workloads.
-- Pub/Sub buffers ingest events and decouples webhook traffic from analysis workers.
-- Cloud SQL stores tenant, incident, workflow, and control-plane state.
-- BigQuery stores normalized operational telemetry and powers reliability windows.
-- Cloud Scheduler triggers aggregate, anomaly, and alert dispatch jobs.
-- Secret Manager stores runtime secrets and provider credentials.
-- Vertex AI with Gemini generates concise incident narratives, likely causes, and operator next steps from sanitized operational context.
+Implemented capabilities include:
 
-## Demo
+- Workflow signal ingestion for execution, heartbeat, and normalized operational events.
+- Generic webhook and API-key sources for n8n, Make, Zapier, and custom workflow systems.
+- GitHub Actions workflow and job signal support through signed webhooks.
+- Tenant and source ownership validation at ingestion boundaries.
+- Signal normalization into a shared operational event shape.
+- Source inventory, source freshness visibility, and activation guidance.
+- Operational dashboards and 1-hour, 24-hour, and 7-day reliability windows.
+- Incident lifecycle, grouping foundations, attention views, and sanitized timelines.
+- Alert policies, channels, and dispatch foundations where runtime delivery is configured.
+- Durable workspace and source signal state.
+- Canonical workspace maturity states: `new`, `configuring`, `active`, `degraded`, `demo_preview`, and `unknown`.
+- Read-only source readiness checks and explicitly marked test/simulation flows.
 
-- Video link: `https://youtu.be/ncGceCxQi2c`
-- Architecture diagram: [assets/synteq-architecture.png](assets/synteq-architecture.png)
+Current incident guidance is deterministic and rules-based. Synteq does not currently claim production AI root-cause analysis, autonomous remediation, native provider OAuth, scheduled synthetic monitoring, or enterprise compliance certification.
 
-## Tech Stack
+## Architecture
 
-- Frontend: Next.js, React, TypeScript, Tailwind CSS
-- Backend: Node.js, Fastify-style API patterns, TypeScript
-- Data: Cloud SQL, BigQuery, Redis-style distributed cache patterns
-- Messaging: Pub/Sub-style event queue
-- AI: Vertex AI with Gemini for operational insight generation
-- Security: HMAC webhook verification, RBAC, secret indirection, tenant isolation, redacted AI prompts
+![Sanitized Synteq architecture](assets/synteq-architecture.svg)
 
-## What Is Included
+The public-safe architecture separates:
 
-- Sanitized product and architecture documentation.
-- Synthetic JSON examples for workflow events, incidents, reliability metrics, and webhook payloads.
-- Limited sample code for event normalization, reliability scoring, grouping, and webhook validation.
-- Static visual assets for architecture and product screens.
+- Source setup and authenticated ingestion.
+- Validation, ownership checks, and signal normalization.
+- Transactional source, signal-state, incident, and control-plane records.
+- Analytical execution telemetry and reliability windows.
+- Incident and timeline context.
+- Operator-facing dashboard, source, and alerting surfaces.
+
+See [docs/architecture.md](docs/architecture.md) and [docs/data-flow.md](docs/data-flow.md) for more detail.
+
+## Technology Themes
+
+- TypeScript, Node.js, Fastify, Next.js, React, and Prisma.
+- Relational application state and analytical telemetry storage.
+- Optional queued ingestion for burst handling.
+- HMAC and provider-native webhook verification patterns.
+- Tenant isolation, source ownership enforcement, idempotency, and payload sanitization.
+
+The showcase intentionally describes architecture at a high level and omits deployable production infrastructure.
+
+## Current Status
+
+Synteq is currently an early-stage workflow reliability intelligence platform under active development. The platform supports controlled demos and ongoing design validation while operational workflows continue to mature.
+
+The canonical workspace maturity foundation is implemented. Product experiences do not yet switch automatically between onboarding and established-workspace Home views based on that state.
+
+## Public-Safe Roadmap
+
+Near-term themes:
+
+- Validate canonical maturity behavior with controlled workspace histories.
+- Improve source identity and freshness clarity across product surfaces.
+- Expand workflow-specific reliability context and release-smoke coverage.
+- Continue incident, timeline, alerting, and demo stability improvements.
+- Evaluate native provider integrations and SLO-oriented features only after core reliability workflows are proven.
+
+## Repository Contents
+
+- `assets`: sanitized architecture and product mockups.
+- `docs`: public-safe architecture, data-flow, deployment, security, and review notes.
+- `examples`: synthetic event, incident, reliability, and webhook examples.
+- `src-samples`: limited sample normalization, scoring, grouping, and validation patterns.
 
 ## What Is Excluded
 
-- Production source code and private business logic.
-- `.env` files, credentials, service account JSON, API keys, tokens, webhooks, database URLs, and private logs.
-- Customer data, real user data, production URLs, internal runbooks, and infrastructure state.
-- Full deployment automation and private operations procedures.
-
-## Submission Note
-
-This is a public-safe showcase repository. It is intentionally not the full production repository. The goal is to help judges understand Synteq's product, architecture, Google Cloud usage, Gemini usage, and implementation style while protecting credentials, users, infrastructure, and intellectual property.
+- Production source code and proprietary business logic.
+- Credentials, service-account files, API keys, tokens, webhook secrets, and database URLs.
+- Customer data, private logs, internal runbooks, production URLs, and infrastructure state.
+- Claims for capabilities that have not been implemented and verified.

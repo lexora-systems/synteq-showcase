@@ -1,37 +1,31 @@
 # Architecture
 
-Synteq is structured as an operational intelligence system for workflow automation. The core design separates ingestion, normalization, reliability analytics, incident management, and human-readable insight generation.
+Synteq is structured as a workflow reliability intelligence system. The design separates source setup, authenticated ingestion, normalization, durable signal state, reliability analytics, incident management, and operator-facing views.
 
 ## High-Level Components
 
-- Web app: operator dashboard, source setup, incidents, reliability views, and team settings.
-- API service: authentication, tenant routing, source management, incident APIs, and control-plane operations.
-- Ingestion layer: receives workflow events and webhook callbacks, verifies signatures, and publishes normalized work.
-- Worker layer: consumes queued events, normalizes payloads, writes telemetry, updates reliability windows, and groups incidents.
-- Analytics layer: aggregates execution reliability in queryable time windows.
-- AI insight layer: sends redacted incident context to Gemini through Vertex AI and stores generated operator guidance.
-- Alerting layer: dispatches incident handoffs through configured channels.
+- Web application: source setup, activation guidance, operational overview, incidents, reliability views, and settings.
+- API service: authentication, tenant routing, source management, ingestion, incidents, alerts, and control-plane operations.
+- Ingestion layer: validates schemas, signatures, tenant/source ownership, request limits, and idempotency.
+- Normalization layer: maps workflow and provider events into shared operational signals.
+- Signal-state layer: records durable real and preview history for workspaces and sources after successful persistence.
+- Analytics layer: stores execution telemetry and produces rolling reliability windows.
+- Incident layer: groups related failures and maintains sanitized timelines and attention views.
+- Alerting foundation: manages policies, channels, and dispatch state where delivery infrastructure is configured.
 
-## Google Cloud Reference Architecture
+## Data Boundaries
 
-1. Cloud Run hosts the web and API services.
-2. Pub/Sub buffers incoming workflow events and protects the API from bursty webhook traffic.
-3. Cloud SQL stores tenants, users, workflow sources, incident state, and control-plane records.
-4. BigQuery stores normalized operational events for analytics and reliability windows.
-5. Cloud Scheduler triggers aggregate, anomaly, and alert jobs on a recurring cadence.
-6. Secret Manager stores runtime credentials and provider secrets.
-7. Vertex AI provides Gemini models for incident summaries and next-step recommendations.
+- Transactional storage holds tenant, user, source, signal-state, incident, and control-plane records.
+- Analytical storage holds execution telemetry and reliability aggregates.
+- Optional queued ingestion can decouple bursty webhook traffic from persistence workers.
+- Runtime secrets remain outside source control.
 
-See [../assets/synteq-architecture.png](../assets/synteq-architecture.png) for a visual diagram.
+## Workspace Maturity
 
-## Multi-Tenant Boundary
+Workspace maturity is backend-owned and tenant-scoped. It uses durable real signal history plus active ingest-capable source inventory. Demo, simulation, and test history remains preview-only. Delivery verification and API-key use are not treated as proof of successful real ingestion.
 
-Every event, source, incident, and metric is associated with a tenant identifier. The API and worker layers apply tenant scoping before reading or writing operational data. Showcase examples use synthetic tenant identifiers only.
-
-## AI Boundary
-
-Gemini prompts are built from sanitized operational context. The model receives incident facts, aggregate reliability signals, and redacted metadata. It does not need raw customer payloads, credentials, webhook secrets, or full database records.
+The supported states are `new`, `configuring`, `active`, `degraded`, `demo_preview`, and `unknown`.
 
 ## Design Principle
 
-Synteq treats workflow observability as an operational decision system, not just a log viewer. The architecture is built to answer what happened, how widespread it is, how urgent it is, and what an operator should do next.
+Synteq focuses on workflow reliability and operational awareness. It is not positioned as a full replacement for logs, traces, APM, or broader observability platforms.

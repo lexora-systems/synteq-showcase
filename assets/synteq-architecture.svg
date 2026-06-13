@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Synteq public-safe architecture</title>
+  <desc id="desc">Workflow sources send authenticated signals through validation and normalization into durable signal state, reliability windows, incidents, and operator views.</desc>
+  <rect width="1440" height="900" fill="#f8fafc"/>
+  <text x="720" y="70" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#172033">Synteq Workflow Reliability Intelligence</text>
+  <text x="720" y="108" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" fill="#64748b">Sanitized architecture overview</text>
+
+  <rect x="70" y="160" width="300" height="560" rx="22" fill="#eff6ff" stroke="#93c5fd"/>
+  <text x="220" y="210" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#1e3a8a">Workflow Sources</text>
+  <rect x="105" y="260" width="230" height="72" rx="14" fill="#ffffff" stroke="#bfdbfe"/>
+  <text x="220" y="304" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" fill="#172033">Generic webhooks</text>
+  <rect x="105" y="370" width="230" height="72" rx="14" fill="#ffffff" stroke="#bfdbfe"/>
+  <text x="220" y="414" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" fill="#172033">API-key sources</text>
+  <rect x="105" y="480" width="230" height="72" rx="14" fill="#ffffff" stroke="#bfdbfe"/>
+  <text x="220" y="524" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" fill="#172033">GitHub Actions</text>
+  <rect x="105" y="590" width="230" height="72" rx="14" fill="#ffffff" stroke="#bfdbfe"/>
+  <text x="220" y="634" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" fill="#172033">Execution / heartbeat</text>
+
+  <rect x="445" y="160" width="360" height="560" rx="22" fill="#ecfdf5" stroke="#86efac"/>
+  <text x="625" y="210" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#14532d">Ingestion Boundary</text>
+  <rect x="490" y="260" width="270" height="86" rx="14" fill="#ffffff" stroke="#bbf7d0"/>
+  <text x="625" y="294" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" fill="#172033">Authentication and</text>
+  <text x="625" y="320" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" fill="#172033">signature verification</text>
+  <rect x="490" y="390" width="270" height="86" rx="14" fill="#ffffff" stroke="#bbf7d0"/>
+  <text x="625" y="424" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" fill="#172033">Tenant and source</text>
+  <text x="625" y="450" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" fill="#172033">ownership checks</text>
+  <rect x="490" y="520" width="270" height="86" rx="14" fill="#ffffff" stroke="#bbf7d0"/>
+  <text x="625" y="554" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" fill="#172033">Idempotency and</text>
+  <text x="625" y="580" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" fill="#172033">signal normalization</text>
+
+  <rect x="880" y="160" width="490" height="560" rx="22" fill="#fff7ed" stroke="#fdba74"/>
+  <text x="1125" y="210" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#7c2d12">Reliability Foundation</text>
+  <rect x="925" y="260" width="190" height="94" rx="14" fill="#ffffff" stroke="#fed7aa"/>
+  <text x="1020" y="298" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#172033">Workspace and source</text>
+  <text x="1020" y="324" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#172033">signal state</text>
+  <rect x="1140" y="260" width="190" height="94" rx="14" fill="#ffffff" stroke="#fed7aa"/>
+  <text x="1235" y="298" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#172033">Source freshness and</text>
+  <text x="1235" y="324" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#172033">workspace maturity</text>
+  <rect x="925" y="405" width="190" height="94" rx="14" fill="#ffffff" stroke="#fed7aa"/>
+  <text x="1020" y="443" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#172033">Reliability windows</text>
+  <text x="1020" y="469" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#172033">and dashboards</text>
+  <rect x="1140" y="405" width="190" height="94" rx="14" fill="#ffffff" stroke="#fed7aa"/>
+  <text x="1235" y="443" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#172033">Incidents, timelines,</text>
+  <text x="1235" y="469" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#172033">and attention views</text>
+  <rect x="925" y="550" width="405" height="94" rx="14" fill="#ffffff" stroke="#fed7aa"/>
+  <text x="1127" y="588" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#172033">Operator dashboard and alerting foundations</text>
+  <text x="1127" y="614" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" fill="#64748b">Human-reviewed operational context</text>
+
+  <path d="M370 440 H445" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M805 440 H880" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <text x="720" y="800" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569">Real signal history is recorded only after successful persistence.</text>
+  <text x="720" y="835" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#64748b">Test, demo, and simulation activity remains preview-only.</text>
+</svg>

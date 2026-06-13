@@ -23,7 +23,7 @@
 
   <rect x="535" y="505" width="755" height="245" rx="12" fill="#f8fafc" stroke="#d8deea"/>
   <text x="565" y="555" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#172033">Alert channels</text>
-  <text x="565" y="607" font-family="Inter, Arial, sans-serif" font-size="17" fill="#475569">Webhook URLs and provider tokens are redacted from UI, logs, and AI context.</text>
+  <text x="565" y="607" font-family="Inter, Arial, sans-serif" font-size="17" fill="#475569">Webhook URLs and provider tokens are redacted from UI, logs, and public output.</text>
   <rect x="565" y="640" width="680" height="58" rx="8" fill="#ffffff" stroke="#d8deea"/>
   <text x="590" y="676" font-family="Inter, Arial, sans-serif" font-size="16" fill="#68738a">Ops channel - enabled - secret stored outside Git</text>
 </svg>

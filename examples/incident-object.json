@@ -20,13 +20,13 @@
     "error_category": "external_dependency",
     "fingerprint": "demo-fingerprint-external-dependency"
   },
-  "ai_summary": {
-    "model": "gemini",
+  "guidance": {
+    "generated_by": "rules_v1",
     "summary": "Recent onboarding executions are failing during an external CRM update step.",
     "recommended_next_steps": [
       "Check the CRM provider status page.",
       "Retry failed executions after dependency recovery.",
-      "Temporarily pause non-critical onboarding automations if failures continue."
+      "Monitor for a successful recovery execution."
     ]
   },
   "created_at": "2026-06-01T10:03:00.000Z",

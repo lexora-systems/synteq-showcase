@@ -1,32 +1,23 @@
 # Security and Privacy
 
-Synteq is designed around tenant isolation, secret hygiene, webhook verification, and data minimization.
+Synteq is designed around tenant isolation, source ownership, secret hygiene, webhook verification, and data minimization.
 
-## Tenant Isolation
+## Tenant and Source Isolation
 
-Every operational event, source, incident, metric, and user action is scoped to a tenant. API and worker code should verify tenant ownership before returning or mutating records.
+Operational events, sources, signal state, incidents, metrics, and user actions are tenant-scoped. Ingestion paths verify that a source belongs to the authenticated tenant before it can contribute canonical signal history.
 
 ## Secret Hygiene
 
-Production secrets belong in Secret Manager or equivalent secure runtime storage. They should never be committed to Git, printed in logs, inserted into AI prompts, or embedded in client-side code.
+Runtime secrets belong in secure runtime storage. They must never be committed to Git, printed in logs, embedded in client-side code, or included in public examples.
 
 ## Webhook Security
 
-Webhook integrations should use timestamped HMAC signatures or equivalent provider-native verification. Requests with missing, stale, or invalid signatures should be rejected before they enter the queue.
+Webhook integrations use provider-native signatures or timestamped HMAC verification where configured. Request limits, replay protection, idempotency, and source ownership checks are applied at ingestion boundaries.
 
-## AI Privacy
+## Data Minimization
 
-Gemini prompts should use redacted operational context:
-
-- Keep workflow names and synthetic identifiers when helpful.
-- Remove credentials, tokens, emails, phone numbers, and payload bodies unless explicitly safe.
-- Prefer aggregate metrics over raw customer records.
-- Store generated insight with provenance and timestamps.
-
-## Logging
-
-Logs should avoid raw headers, authorization values, full webhook bodies, database URLs, and provider tokens. Error messages should be actionable without exposing sensitive data.
+Synteq is intended to receive workflow execution metadata, not customer records. Logs and product views avoid raw authorization headers, credentials, full webhook bodies, database URLs, and provider tokens.
 
 ## Showcase Repository Controls
 
-This repository is sanitized. It excludes production implementation details, credentials, internal runbooks, private logs, and customer data.
+This repository contains only synthetic examples and sanitized documentation. It excludes production implementation details, credentials, internal runbooks, private logs, customer data, and production infrastructure identifiers.
